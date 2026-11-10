@@ -1,3 +1,5 @@
+// Pida un numero entero al usuario e imprima si es Positivo, Negativo o Cero. Use if - else if - else
+
 package guia1;
 
 import java.util.Scanner;
