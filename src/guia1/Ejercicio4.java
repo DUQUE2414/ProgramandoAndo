@@ -1,42 +1,45 @@
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try {
+            String s1 = JOptionPane.showInputDialog("Ingrese el primer numero:");
+            if (s1 == null) return;
+            double num1 = Double.parseDouble(s1);
 
-        System.out.println("Ingrese el primer numero:");
-        double num1 = scanner.nextDouble();
+            String s2 = JOptionPane.showInputDialog("Ingrese el segundo numero:");
+            if (s2 == null) return;
+            double num2 = Double.parseDouble(s2);
 
-        System.out.println("Ingrese el segundo numero:");
-        double num2 = scanner.nextDouble();
+            String opStr = JOptionPane.showInputDialog("Ingrese el operador (+, -, *, /):");
+            if (opStr == null || opStr.isEmpty()) return;
+            char operador = opStr.charAt(0);
 
-        System.out.println("Ingrese el operador (+, -, *, /):");
-        char operador = scanner.next().charAt(0);
-
-        switch (operador) {
-            case '+':
-                System.out.println("Resultado: " + (num1 + num2));
-                break;
-            case '-':
-                System.out.println("Resultado: " + (num1 - num2));
-                break;
-            case '*':
-                System.out.println("Resultado: " + (num1 * num2));
-                break;
-            case '/':
-                if (num2 == 0) {
-                    System.out.println("Error: Division entre cero no permitida.");
-                } else {
-                    System.out.println("Resultado: " + (num1 / num2));
-                }
-                break;
-            default:
-                System.out.println("Operador invalido.");
-                break;
+            switch (operador) {
+                case '+':
+                    JOptionPane.showMessageDialog(null, "Resultado: " + (num1 + num2));
+                    break;
+                case '-':
+                    JOptionPane.showMessageDialog(null, "Resultado: " + (num1 - num2));
+                    break;
+                case '*':
+                    JOptionPane.showMessageDialog(null, "Resultado: " + (num1 * num2));
+                    break;
+                case '/':
+                    if (num2 == 0) {
+                        JOptionPane.showMessageDialog(null, "Error: Division entre cero no permitida.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Resultado: " + (num1 / num2));
+                    }
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Operador invalido.");
+                    break;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error: Entrada numerica invalida.");
         }
-
-        scanner.close();
     }
 }
