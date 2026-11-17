@@ -1,21 +1,23 @@
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese su edad:");
-        int edad = scanner.nextInt();
+        try {
+            String input = JOptionPane.showInputDialog("Ingrese su edad:");
+            if (input == null) return;
+            int edad = Integer.parseInt(input);
 
-        if (edad < 0) {
-            System.out.println("Edad invalida");
-        } else if (edad >= 18) {
-            System.out.println("Puede ingresar");
-        } else {
-            System.out.println("Acceso denegado");
+            if (edad < 0) {
+                JOptionPane.showMessageDialog(null, "Edad invalida");
+            } else if (edad >= 18) {
+                JOptionPane.showMessageDialog(null, "Puede ingresar");
+            } else {
+                JOptionPane.showMessageDialog(null, "Acceso denegado");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error: Debe ingresar un numero entero valido.");
         }
-
-        scanner.close();
     }
 }
