@@ -2,24 +2,26 @@
 
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio1 {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el numero");
-        int numero = scanner.nextInt();
+        try {
+            int numero = Integer.parseInt(
+                    JOptionPane.showInputDialog("Ingrese un numero: "));
 
-        if (numero > 0) {
-            System.out.println("Positivo");
-        } else if (numero < 0) {
-            System.out.println("Negativo");
-        } else {
-            System.out.println("Cero");
+            if (numero == 0) {
+                JOptionPane.showMessageDialog(null, "Cero");
+            } else if (numero > 0) {
+                JOptionPane.showMessageDialog(null, "Positivo");
+            } else {
+                JOptionPane.showMessageDialog(null, "Negativo");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error: Solo se permiten numeros");
         }
-        scanner.close();
 
     }
 }

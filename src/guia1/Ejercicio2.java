@@ -2,23 +2,22 @@
 
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        try {
+            int numero = Integer.parseInt(
+                    JOptionPane.showInputDialog("Ingrese un numero entero"));
 
-        System.out.println("Ingrese el numero");
-        int numero = scanner.nextInt();
-
-        if(numero % 2 == 0){
-            System.out.println("Par");
+            if (numero % 2 == 0) {
+                JOptionPane.showMessageDialog(null, " El numero: " + numero + " Es Par");
+            } else {
+                JOptionPane.showMessageDialog(null, " El numero: " + numero + " Es Impar");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error: Solo se permiten numeros");
         }
-        else{
-            System.out.println("Impar");
-        }
-
-        scanner.close();
     }
 }

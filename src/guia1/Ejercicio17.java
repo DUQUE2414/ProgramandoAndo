@@ -3,13 +3,15 @@
 
 package guia1;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio17 {
     public static void main(String[] args) {
-        System.out.println("La tabla de multiplicar del 7");
-
+        
+        String Acumulador = "";
         for (int i = 1; i <= 10; i++) {
-            int tabla = 7 * i;
-            System.out.println("7 x %d = %d".formatted(i, tabla));
+            Acumulador = Acumulador + "7 x " + i + " = " + (7 * i) + "\n";
         }
+        JOptionPane.showMessageDialog(null, Acumulador, "Tabla del 7", JOptionPane.INFORMATION_MESSAGE);
     }
 }
