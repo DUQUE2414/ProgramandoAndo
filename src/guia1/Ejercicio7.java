@@ -1,7 +1,6 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio7 {
     public static void main(String[] args) {
@@ -9,33 +8,27 @@ public class Ejercicio7 {
     }
 
     public static void ejecutar() {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ingrese el primer numero: ");
-        int numero1 = scanner.nextInt();
+        int numero1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer numero:"));
 
-        System.out.println("Ingrese el segundo numero: ");
-        int numero2 = scanner.nextInt();
+        int numero2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo numero:"));
 
-        System.out.println("Ingrese el tercer numero: ");
-        int numero3 = scanner.nextInt();
+        int numero3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer numero:"));
 
         if (numero1 == numero2 && numero2 == numero3) {
-            System.out.println("Los tres numeros son iguales");
+            JOptionPane.showMessageDialog(null, "Los tres numeros son iguales");
         } else if (numero1 == numero2 && numero1 > numero3) {
-            System.out.println("El numero 1 y 2 empatan como mayores");
+            JOptionPane.showMessageDialog(null, "El numero 1 y 2 empatan como mayores");
         } else if (numero1 == numero3 && numero1 > numero2) {
-            System.out.println("El numero 1 y 3 empatan como mayores");
+            JOptionPane.showMessageDialog(null, "El numero 1 y 3 empatan como mayores");
         } else if (numero2 == numero3 && numero2 > numero1) {
-            System.out.println("El numero 2 y 3 empatan como mayores");
+            JOptionPane.showMessageDialog(null, "El numero 2 y 3 empatan como mayores");
         } else if (numero1 > numero2 && numero1 > numero3) {
-            System.out.println("El numero mayor es: " + numero1);
+            JOptionPane.showMessageDialog(null, "El numero mayor es: " + numero1);
         } else if (numero2 > numero1 && numero2 > numero3) {
-            System.out.println("El numero mayor es: " + numero2);
+            JOptionPane.showMessageDialog(null, "El numero mayor es: " + numero2);
         } else {
-            System.out.println("El numero mayor es: " + numero3);
+            JOptionPane.showMessageDialog(null, "El numero mayor es: " + numero3);
         }
-
-        scanner.close();
     }
 }

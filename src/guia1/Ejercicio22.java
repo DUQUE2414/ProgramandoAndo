@@ -1,7 +1,6 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio22 {
     public static void main(String[] args) {
@@ -9,23 +8,21 @@ public class Ejercicio22 {
     }
 
     public static void ejecutar() {
-        Scanner scanner = new Scanner(System.in);
 
         int[] numeros = new int[10];
 
-        System.out.println("Arreglo de 10 numeros");
+        JOptionPane.showMessageDialog(null, "Arreglo de 10 numeros");
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese un numero: ");
-            numeros[i] = scanner.nextInt();
+            numeros[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero:"));
         }
 
-        System.out.println("Los numeros del arreglo son:");
+        String resultado = "Los numeros del arreglo son:\n";
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println(numeros[i]);
+            resultado += numeros[i] + "\n";
         }
 
-        scanner.close();
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }

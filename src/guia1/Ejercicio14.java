@@ -1,7 +1,6 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio14 {
     public static void main(String[] args) {
@@ -9,15 +8,13 @@ public class Ejercicio14 {
     }
 
     public static void ejecutar() {
-        Scanner scanner = new Scanner(System.in);
 
         int[] numerosImpares = new int[50];
         int numero = 1;
         int posicion = 0;
 
-        System.out.println("Numeros impares del 1 al 100");
-        System.out.print("Presione Enter para continuar...");
-        scanner.nextLine();
+        JOptionPane.showMessageDialog(null, "Numeros impares del 1 al 100");
+        JOptionPane.showMessageDialog(null, "Presione Aceptar para continuar...");
 
         while (numero <= 100) {
             if (numero % 2 != 0) {
@@ -28,12 +25,13 @@ public class Ejercicio14 {
         }
 
         int i = 0;
+        String resultado = "";
 
         while (i < numerosImpares.length) {
-            System.out.println(numerosImpares[i]);
+            resultado += numerosImpares[i] + "\n";
             i++;
         }
 
-        scanner.close();
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }

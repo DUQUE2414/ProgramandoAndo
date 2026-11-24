@@ -1,6 +1,6 @@
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
@@ -8,23 +8,18 @@ public class Ejercicio9 {
     }
 
     public static void ejecutar() {
-        Scanner scanner = new Scanner(System.in);
 
         String usuario = "admin";
         int clave = 1234;
 
-        System.out.print("Ingrese el nombre de usuario: ");
-        String UsuarioIngresado = scanner.nextLine();
+        String UsuarioIngresado = JOptionPane.showInputDialog("Ingrese el nombre de usuario:");
 
-        System.out.print("Ingrese la clave: ");
-        int ClaveIngresada = scanner.nextInt();
+        int ClaveIngresada = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave:"));
 
         if (UsuarioIngresado.equals(usuario) && ClaveIngresada == clave) {
-            System.out.println("Bienvenido, " + UsuarioIngresado + "!");
+            JOptionPane.showMessageDialog(null, "Bienvenido, " + UsuarioIngresado + "!");
         } else {
-            System.out.println("Credenciales incorrectas.");
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.");
         }
-
-        scanner.close();
     }
 }
