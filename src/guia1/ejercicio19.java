@@ -1,32 +1,17 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ejercicio19 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int[] numeros = new int[20];
+    public void Ejecutar() {
         int contador = 0;
-
-        System.out.println("Multiplos de 10 del 1 al 200");
-        System.out.print("Presione Enter para continuar...");
-        scanner.nextLine();
-
+        StringBuilder sb = new StringBuilder("19. Múltiplos de 10 del 1 al 200:\n");
         for (int i = 1; i <= 200; i++) {
             if (i % 10 == 0) {
-                numeros[contador] = i;
+                sb.append(i).append(" ");
                 contador++;
             }
         }
-
-        for (int i = 0; i < contador; i++) {
-            System.out.println(numeros[i]);
-        }
-
-        System.out.println("Cantidad de multiplos de 10: " + contador);
-
-        scanner.close();
+        JOptionPane.showMessageDialog(null, sb.toString() + "\nTotal de múltiplos: " + contador);
     }
 }

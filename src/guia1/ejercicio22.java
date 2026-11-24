@@ -1,27 +1,14 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ejercicio22 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int[] numeros = new int[10];
-
-        System.out.println("Arreglo de 10 numeros");
-
+    public void Ejecutar() {
+        int[] numeros = {5, 12, 8, 3, 20, 15, 7, 9, 14, 2};
+        StringBuilder sb = new StringBuilder("22. Elementos del arreglo:\n");
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese un numero: ");
-            numeros[i] = scanner.nextInt();
+            sb.append("Índice ").append(i).append(": ").append(numeros[i]).append("\n");
         }
-
-        System.out.println("Los numeros del arreglo son:");
-
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.println(numeros[i]);
-        }
-
-        scanner.close();
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 }

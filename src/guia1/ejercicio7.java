@@ -1,37 +1,27 @@
-
 package guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ejercicio7 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public void Ejecutar() {
+        double n1 = Double.parseDouble(JOptionPane.showInputDialog(null, "7. Ingrese el primer número:"));
+        double n2 = Double.parseDouble(JOptionPane.showInputDialog(null, "7. Ingrese el segundo número:"));
+        double n3 = Double.parseDouble(JOptionPane.showInputDialog(null, "7. Ingrese el tercer número:"));
 
-        System.out.println("Ingrese el primer numero: ");
-        int numero1 = scanner.nextInt();
-
-        System.out.println("Ingrese el segundo numero: ");
-        int numero2 = scanner.nextInt();
-
-        System.out.println("Ingrese el tercer numero: ");
-        int numero3 = scanner.nextInt();
-
-        if (numero1 == numero2 && numero2 == numero3) {
-            System.out.println("Los tres numeros son iguales");
-        } else if (numero1 == numero2 && numero1 > numero3) {
-            System.out.println("El numero 1 y 2 empatan como mayores");
-        } else if (numero1 == numero3 && numero1 > numero2) {
-            System.out.println("El numero 1 y 3 empatan como mayores");
-        } else if (numero2 == numero3 && numero2 > numero1) {
-            System.out.println("El numero 2 y 3 empatan como mayores");
-        } else if (numero1 > numero2 && numero1 > numero3) {
-            System.out.println("El numero mayor es: " + numero1);
-        } else if (numero2 > numero1 && numero2 > numero3) {
-            System.out.println("El numero mayor es: " + numero2);
+        if (n1 == n2 && n2 == n3) {
+            JOptionPane.showMessageDialog(null, "Empate total entre los tres. Todos son: " + n1);
+        } else if (n1 == n2 && n1 > n3) {
+            JOptionPane.showMessageDialog(null, "Empate entre el 1º y 2º número. Mayor: " + n1);
+        } else if (n1 == n3 && n1 > n2) {
+            JOptionPane.showMessageDialog(null, "Empate entre el 1º y 3º número. Mayor: " + n1);
+        } else if (n2 == n3 && n2 > n1) {
+            JOptionPane.showMessageDialog(null, "Empate entre el 2º y 3º número. Mayor: " + n2);
+        } else if (n1 > n2 && n1 > n3) {
+            JOptionPane.showMessageDialog(null, "El mayor es el 1º número: " + n1);
+        } else if (n2 > n1 && n2 > n3) {
+            JOptionPane.showMessageDialog(null, "El mayor es el 2º número: " + n2);
         } else {
-            System.out.println("El numero mayor es: " + numero3);
+            JOptionPane.showMessageDialog(null, "El mayor es el 3º número: " + n3);
         }
-
-        scanner.close();
     }
 }
