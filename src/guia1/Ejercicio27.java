@@ -3,14 +3,20 @@ package guia1;
 import javax.swing.JOptionPane;
 
 public class Ejercicio27 {
-    public void Ejecutar() {
-        StringBuilder sb = new StringBuilder("27. Cuadrado 6x6:\n");
-        for (int i = 1; i <= 6; i++) {
-            for (int j = 1; j <= 6; j++) {
-                sb.append("* ");
+    public static void main(String[] args) {
+        ejecutar();
+    }
+
+    public static void ejecutar() {
+        int tamaño = 6;
+        String acumulador = "";
+
+        for (int i = 1; i <= tamaño; i++) {
+            for (int j = 1; j <= tamaño; j++) {
+                acumulador += "* ";
             }
-            sb.append("\n");
+            acumulador += "\n";
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+        JOptionPane.showMessageDialog(null, acumulador, "Cuadrado de Asteriscos", JOptionPane.INFORMATION_MESSAGE);
     }
 }
