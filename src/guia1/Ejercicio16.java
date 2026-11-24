@@ -3,13 +3,25 @@ package guia1;
 import javax.swing.JOptionPane;
 
 public class Ejercicio16 {
-    public void Ejecutar() {
+    public static void main(String[] args) {
+        ejecutar();
+    }
+
+    public static void ejecutar() {
+
+        int impar[] = new int[50];
         int suma = 0;
-        for (int i = 1; i <= 50; i++) {
-            if (i % 2 != 0) {
-                suma += i;
+
+        for (int i = 0; i < impar.length; i++) {
+
+            impar[i] = i + 1;
+
+            if (impar[i] % 2 != 0) {
+                suma += impar[i];
             }
         }
-        JOptionPane.showMessageDialog(null, "16. La suma de los números impares del 1 al 50 es: " + suma);
+
+        JOptionPane.showMessageDialog(null,
+                "La suma de los números impares del 1 hasta el 50 es: " + suma);
     }
 }

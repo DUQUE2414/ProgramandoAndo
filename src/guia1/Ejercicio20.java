@@ -3,13 +3,24 @@ package guia1;
 import javax.swing.JOptionPane;
 
 public class Ejercicio20 {
-    public void Ejecutar() {
-        StringBuilder sb = new StringBuilder("20. Divisibles entre 3 y 5 (1 al 100):\n");
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                sb.append(i).append(" ");
+
+    public static void main(String[] args) {
+        ejecutar();
+    }
+
+    public static void ejecutar() {
+
+        int[] numeros = new int[100];
+        String resultado = "";
+
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = i + 1;
+
+            if (numeros[i] % 3 == 0 && numeros[i] % 5 == 0) {
+                resultado += numeros[i] + " es múltiplo de 3 y 5\n";
             }
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }

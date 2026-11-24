@@ -5,6 +5,10 @@ import javax.swing.JOptionPane;
 public class Ejercicio15 {
 
     public static void main(String[] args) {
+        ejecutar();
+    }
+
+    public static void ejecutar() {
 
         int suma = 0;
 
