@@ -17,6 +17,6 @@ public class Ejercicio15 {
         }
 
         JOptionPane.showMessageDialog(null,
-                "La suma de los números del 1 al 100 es: " + suma);
+                "La suma de los números del 1 al 100 es : " + suma);
     }
 }
